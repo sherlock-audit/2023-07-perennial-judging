@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Positions will be unfairly liquidated immediately after an unpause
-## Summary
 While the Market is paused, many positions can become undercollateralized as price of Market token changes.
 When the contract gets unpaused, Users are not given the chance to make their positions healthy, which would lead to unfair liquidations.
 

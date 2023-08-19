@@ -3,7 +3,6 @@ Wonderful Silver Loris
 medium
 
 # It is possible to open and liquidate your own position in 1 transaction to overcome efficiency and liquidity removal limits at almost no cost
-## Summary
 
 The way the protocol is setup, it is possible to open positions or withdraw collateral up to exactly maintenance limit (some percentage of notional). However, this means that it's possible to be at almost liquidation level intentionally and moreover, the current oracle setup allows to open and immediately liquidate your own position in 1 transaction, effectively bypassing efficiency and liquidity removal limits, paying only the keeper (and possible position open/close) fees, causing all kinds of malicious activity which can harm the protocol.
 

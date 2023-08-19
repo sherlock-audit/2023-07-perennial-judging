@@ -3,7 +3,6 @@ Funny Pickle Cottonmouth
 medium
 
 # No L2 sequencer check when getting ETH price for the sake of calculating keeper fees
-## Summary
 
 The lack of a sequencer uptime check allows for the use of a stale price for calculating keeper payouts.
 

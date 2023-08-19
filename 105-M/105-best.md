@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Markets cannot use USDC as underlying token
-## Summary
 Due to the assumption that underlying collateral token will have 18 decimals, wrong scaling formula is used, which prevents the use of USDC that has 6 decimals
 
 ## Vulnerability Detail

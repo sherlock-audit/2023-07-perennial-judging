@@ -3,7 +3,6 @@ Sour Macaroon Boar
 medium
 
 # Chainlink's latestRoundData return stale or incorrect result
-Yakuzakiawe
 
 Medium
 

@@ -3,7 +3,6 @@ Savory Laurel Gazelle
 medium
 
 # keep() may not be able to execute
-## Summary
 `Kept.keep()` calls `_raiseKeeperFee()` to get the token
 Most current implementations of `_raiseKeeperFee()` remove the trailing number `18 -> 6 -> 18`.
 However, when `Kept.keep()` is transferred to `msg.sender`, the trailing number is still included, which may leads to transfer failure

@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 high
 
 # Protocol fee from Market.sol is locked
-## Summary
 
 The `MarketFactory#fund` calls the specified market's `Market#claimFee` function.
 This will send the protocolFee to the MarketFactory contract.

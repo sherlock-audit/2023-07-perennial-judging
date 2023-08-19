@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Vault.sol: Keeper fee accounting is bricked when a user calls update multiple times
-## Summary
 Due to the way Vault calculates the share of keeper fees that each account will pay i.e. by dividing globalKeeperFees by Checkpoint.count(number of times Vault#update was called), a single account can game the system by `update`ing many times, to reduce to dust the amount of keeperFees that will be accounted for.
 
 ## Vulnerability Detail

@@ -3,7 +3,6 @@ Rich Lilac Viper
 high
 
 # Keepers will suffer significant losses due to miss compensation for L1 rollup fees
-## Summary
 While keepers submits transactions to L2 EVM chains, they need to pay both L2 execution fee and L1 rollup fee. Actually, L1 fees are much higher than L2 fees. In many case, L2 fees can be practically negligible. The current implementation only compensate and incentive keepers based on L2 gas consumption, keepers will suffer significant losses.
 
 ## Vulnerability Detail

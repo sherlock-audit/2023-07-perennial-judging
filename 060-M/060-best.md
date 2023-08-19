@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Users can open positions such that the liquidationFee is more than the collateral balance
-## Summary
 There is no lower limit to the amount of collateral that a user can deposit, so a user can use very tiny collateral to open a very risky highly leveraged position, and when it gets liquidated, liquidator will get paid `riskParameter.minLiquidationFee` which is more than the user's collateral balance
 
 ## Vulnerability Detail

@@ -3,7 +3,6 @@ Itchy Licorice Stork
 medium
 
 # Oracle requests dont check if latest provider is still active
-## Summary
 
 Requests in the oracle will always request from the `current` provider even if the `latest` provider is still active. This can cause a gap in price, when `latest` provider will not be updated but its most recent data will still be used.
 

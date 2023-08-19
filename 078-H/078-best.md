@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 high
 
 # Market.sol: User can deposit, open & close position, and withdraw in a single transaction
-## Summary
 
 Due to the weak `Position.sol::PositionLib#ready` check(which is used in `Market.sol#_settle` function), a user can deposit, open&close position, and withdraw collateral+PnL in a single transaction.
 This allows attacker to use a flashloan in order to gain massive PnL from the attack
@@ -58,5 +57,4 @@ Manual Review
 @>      return latestVersion.timestamp >= self.timestampOfUpdate;
     }
   ```
-
 

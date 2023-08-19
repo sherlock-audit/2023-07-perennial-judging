@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Excess native value is not sent back to keeper after a commit call
-## Summary
 
 PythOracle#commit requires that user sends higher than needed native value to ensure that transaction does not revert(because the amount of native value to be sent with the parsePriceFeedUpdates call is not known beforehand).
 The excess native value sent by keeper is not refunded to him after the call, leading to locking of native value in PythOracle contract.

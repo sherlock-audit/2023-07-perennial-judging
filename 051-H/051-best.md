@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 high
 
 # Attacker can drain Market.sol through liquidation
-## Summary
 `Market#_invariant` does not check if withdrawing a liquidation fee will not cause collateral balance of that account to go below 0.
 This allows an attacker to open a position, and liquidate it multiple times before next settlement.
 Even if deducting liquidation fee will cause the collateral balance of the account being liquidated to go below 0, liquidator is not stopped, so he can repeat this to drain Market.sol contract.

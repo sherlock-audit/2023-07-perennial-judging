@@ -3,7 +3,6 @@ Flat Iris Rhino
 medium
 
 # Chainlink oracle will return the wrong price if the aggregator hits minAnswer
-## Summary
 Chainlink oracle will return the wrong price if the aggregator hits minAnswer
 
 ## Vulnerability Detail

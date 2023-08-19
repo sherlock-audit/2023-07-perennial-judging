@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Exiting the market as a trader results in a deficit in collateral balance.
-## Summary
 It is expected that a trader that closes all his position and withdraws all his collateral will have a collateral balance of 0, but this is not so due to the delayed settlement of position fees
 
 ## Vulnerability Detail

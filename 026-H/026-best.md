@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 high
 
 # User can get liquidated multiple times before next settlement
-## Summary
 
 Whenever an account's position becomes unhealthy, anyone is allowed to liquidate that account by withdrawing an amount of liquidationFee from the account's collateral and closing all open positions.
 The problem is that, a liquidator can liquidate that account multiple times before the next settlement(i.e. before another oracleVersion is committed), withdrawing liquidationFee each time, to steal all that account's collateral.

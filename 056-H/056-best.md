@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # PythOracle:if price.expo is less than 0, wrong prices will be recorded
-## Summary
 In PythOracle#\_recordPrice function, prices with negative exponents are not handled correctly, leading to a massive deviation in prices.
 
 ## Vulnerability Detail

@@ -3,7 +3,6 @@ Wonderful Silver Loris
 high
 
 # PythOracle allows any user to commit non-requested oracle version for any timestamp after the previous commit even if it's long ago which can be abused to steal from the protocol via price manipulation and collateral removal
-## Summary
 
 PythOracle allows any user to commit non-requested oracle version. The only restriction is for the commit timestamp specified by the user to be after the previous commit. If there were no commits nor oracle requests for some time, it is possible to manipulate the price to steal funds from protocol. Since collateral change is the only operation which can be done without first requesting a price, we can use it to "close" positions via removing max collateral at artificial price and abandoning it with a bad debt (additionally profiting from liquidating it).
 

@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Several inconsistencies with payoffs especially if we are expecting base to be 1e6
-## Summary
 All the payoff contracts are not scaled similarly
 
 ## Vulnerability Detail

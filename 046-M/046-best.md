@@ -3,7 +3,6 @@ Wonderful Silver Loris
 medium
 
 # During oracle provider switch, if it is impossible to commit the last request of previous provider, then the oracle will get stuck (no price updates) without any possibility to fix it
-## Summary
 
 When the oracle provider is updated (switched to new provider), the latest status (price) returned by the oracle will come from the previous provider until the last request is commited for it, only then the price feed from the new provider will be used. However, it can happen that it's impossible to commit the latest request: for example, if pyth signature server is down for the period it is needed, or if all keepers were down for that time period, so valid price with signature for the timestamp required is not available. In this case, the oracle price will be stuck, because it will ignore new provider, but the previous provider can never finalize (commit a fresh price). It is also impossible to cancel provider switch as there is no such function. As such, the oracle price will get stuck and will never update, breaking the whole protocol with user funds stuck in the protocol.
 

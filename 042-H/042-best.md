@@ -3,7 +3,6 @@ Wonderful Silver Loris
 high
 
 # Oracle request timestamp and pending position timestamp mismatch can make most position updates invalid
-## Summary
 
 When a new pending position is added, its timestamp is set to `currentTimestamp` returned by oracle's `status` function, which is a timestamp at certain granularities rounding up into the future, which means that most of the time it's greater than `block.timestamp`. However, when `request` is called for the oracle, the request timestamp is set to `block.timestamp`. Due to this mismatch, when the oracle price is commited, it is commited with request's timestamp, but when the position is settled, it tries to read the price at position's timestamp, which is a different time. As such, if the oracle price is commited for each request, it's still easily possible that all pending positions will have invalid oracle versions, completely breaking the protocol's functionality.
 

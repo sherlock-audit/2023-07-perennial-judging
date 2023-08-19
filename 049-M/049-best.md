@@ -3,7 +3,6 @@ Wonderful Silver Loris
 high
 
 # Invalid oracle versions can cause desync of global and local positions making protocol lose funds and being unable to pay back all users
-## Summary
 
 When oracle version is skipped for any reason (marked as invalid), pending positions are invalidated (reset to previous latest position):
 ```solidity

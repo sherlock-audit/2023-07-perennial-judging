@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Vault.sol: Underlying Market fee is not accounted for in Vault.sol
-## Summary
 Whenever Vault deposits to an underlying market, market charges a fee based on the size of position that is opened.
 However, in Vault.sol, depositors are not made to pay the fees. This allows depositors to be able to claim a slightly higher amount than they should, while a few other depositors(that withdraw their funds late) are forced to pay all the fees that Market has been charging the Vault with their collateral.
 

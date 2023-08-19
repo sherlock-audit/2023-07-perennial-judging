@@ -3,7 +3,6 @@ Wonderful Silver Loris
 high
 
 # Bad debt (shortfall) liquidation leaves liquidated user in a negative collateral balance which can cause bank run and loss of funds for the last users to withdraw
-## Summary
 
 Bad debt liquidation leaves liquidated user with a negative collateral. However, there is absolutely no incentive for anyone to repay this bad debt. This means that most of the time the account with negative balance will simply be abandoned. This means that this negative balance (bad debt) is taken from the other users, however it is not socialized, meaning that the first users to withdraw will be able to do so, but the last users will be unable to withdraw because protocol won't have enough funds. This means that any large bad debt in the market can trigger a bank run with the last users to withdraw losing their funds.
 

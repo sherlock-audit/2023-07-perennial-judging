@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Malicious user can claim dust amount numerous times to cause Vault to lose through fees
-## Summary
 Market.sol charges a fixed settlement fee each time a new order is created.
 Vault calls Market#update each time a depositor claims assets(no matter how little).
 A malicious user can claim dust amounts(as little as 0.00001 dollar) multiple times, and in a single transaction, to cause Vault to lose settlementFee\*numberOfTimesUserClaimed from each underlying market.

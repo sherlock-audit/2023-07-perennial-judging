@@ -3,7 +3,6 @@ Wonderful Silver Loris
 medium
 
 # PythOracle `commit()` function doesn't require (nor stores) pyth price publish timestamp to be after the previous commit's publish timestamp, which makes it possible to manipulate price to unfairly liquidate users and possible stealing protocol funds
-## Summary
 
 PythOracle allows any user to commit non-requested oracle version. However, it doesn't verify pyth price publish timestamp to be in order (like `commitRequested` does). This makes it possible to commit prices out of order, potentially leading to price manipulations allowing to unfairly liquidate users or steal funds from the protocol.
 

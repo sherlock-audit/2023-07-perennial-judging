@@ -3,7 +3,6 @@ Brisk Orchid Elk
 high
 
 # StrategyLib.sol#L112 : `_loadContext` is not accumulating the market's `maintenance`
-## Summary
 
 when loading the market context,  the parameters related to market context are updated. For each positions there will be a maintenance. But when loading the maintenance for each position, the values are not accumulated, instead, the last maintenance value is updated as maintenance from the function [_loadContext](https://github.com/sherlock-audit/2023-07-perennial/blob/main/perennial-v2/packages/perennial-vault/contracts/lib/StrategyLib.sol#L100C14-L100C26)
 

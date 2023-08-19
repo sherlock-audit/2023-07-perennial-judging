@@ -3,7 +3,6 @@ Original Tiger Panther
 medium
 
 # Missing `updatedAt` and recommended timeout checks in `Kept.sol` fetched chainlink prices
-## Summary
 [`PythOracle`](https://github.com/sherlock-audit/2023-07-perennial/blob/main/perennial-v2/packages/perennial-oracle/contracts/pyth/PythOracle.sol#L127) incentivizes the `keeper` with an amount pro-rata to the ether price, fetched from a Chainlink oracle. When using chainlink prices, it's important to check that the `updatedAt` return value from the `latestRoundData()` call is different than 0. Additionaly, a timeout should be added after which the `updatedAt` value is no longer valid (not fresh enough).
 
 ## Vulnerability Detail

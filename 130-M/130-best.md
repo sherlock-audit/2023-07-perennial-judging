@@ -3,7 +3,6 @@ Agreeable Rainbow Crow
 high
 
 # Market: User can frontrun oracle version update to settle position at a determined price
-## Summary
 
 User can monitor price in oracle version update transaction. The price will be used in the next settlement. User can frontrun this transaction to settle his position at a determined price. So that entering or exiting positions can be timed to profit.
 

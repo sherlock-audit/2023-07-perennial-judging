@@ -3,7 +3,6 @@ Fresh Aegean Sparrow
 medium
 
 # Vault.sol: `settle`ing the 0 address will disrupt accounting
-## Summary
 Due to the ability of anyone to settle the 0 address, the global assets and global shares will be wrong because lower keeper fees were deducted within the `_settle` function.
 
 ## Vulnerability Detail

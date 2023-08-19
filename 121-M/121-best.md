@@ -3,7 +3,6 @@ Savory Laurel Gazelle
 medium
 
 # update() wrong privilege control
-## Summary
 `oracle.update()`  wrong privilege control
 lead to `OracleFactory.update()` unable to add `oracleProvider`
 

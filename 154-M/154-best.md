@@ -3,7 +3,6 @@ Expert Lava Chinchilla
 medium
 
 # Early Vault depositor can manipulate exchange rates to steal funds from later depositors
-## Summary
 
 An early user can manipulate the price per share and profit from late users' deposits because of the precision loss caused by the large value of price per share.****
 
