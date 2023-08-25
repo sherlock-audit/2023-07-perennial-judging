@@ -1209,7 +1209,86 @@ contract Oracle is IOracle, Instance {
 
 
 
-# Issue M-8: Early Vault depositor can manipulate exchange rates to steal funds from later depositors 
+# Issue M-8: `_accumulateFunding()` maker will get the wrong amount of funding fee. 
+
+Source: https://github.com/sherlock-audit/2023-07-perennial-judging/issues/139 
+
+## Found by 
+WATCHPUG
+
+## Vulnerability Detail
+
+The formula that calculates the amount of funding in `Version#_accumulateFunding()` on the maker side is incorrect. This leads to an incorrect distribution of funding between the minor and the maker's side.
+
+```solidity
+// Redirect net portion of minor's side to maker
+if (fromPosition.long.gt(fromPosition.short)) {
+    fundingValues.fundingMaker = fundingValues.fundingShort.mul(Fixed6Lib.from(fromPosition.skew().abs()));
+    fundingValues.fundingShort = fundingValues.fundingShort.sub(fundingValues.fundingMaker);
+}
+if (fromPosition.short.gt(fromPosition.long)) {
+    fundingValues.fundingMaker = fundingValues.fundingLong.mul(Fixed6Lib.from(fromPosition.skew().abs()));
+    fundingValues.fundingLong = fundingValues.fundingLong.sub(fundingValues.fundingMaker);
+}
+```
+
+## PoC
+
+Given:
+
+- long/major: 1000
+- short/minor: 1
+- maker: 1
+
+Then:
+
+1. skew(): 999/1000
+2. fundingMaker: 0.999 of the funding
+3. fundingShort: 0.001 of the funding
+
+While the maker only matches for `1` of the major part and contributes to half of the total short side, it takes the entire funding.
+
+## Impact
+
+## Code Snippet
+
+https://github.com/sherlock-audit/2023-07-perennial/blob/main/perennial-v2/packages/perennial/contracts/types/Version.sol#L207-L215
+
+
+## Tool used
+
+Manual Review
+
+## Recommendation
+
+The correct formula to calculate the amount of funding belonging to the maker side should be:
+
+```markdown
+fundingMakerRatio = min(maker, major - minor) / min(major, minor + maker)
+fundingMaker = fundingMakerRatio * fundingMinor
+```
+
+
+
+## Discussion
+
+**sherlock-admin**
+
+2 comment(s) were left on this issue during the judging contest.
+
+**__141345__** commented:
+> m
+
+**panprog** commented:
+> medium because incorrect result only starts appearing if abs(long-short) > maker and the larger the difference, the more incorrect the split of funding is. But this situation is exceptional case, most of the time abs(long-short) < maker due to efficiency and liquidity limits
+
+
+
+**arjun-io**
+
+We'd like to re-open this as it does appear to be a valid issue. Medium severity seems correct here
+
+# Issue M-9: Early Vault depositor can manipulate exchange rates to steal funds from later depositors 
 
 Source: https://github.com/sherlock-audit/2023-07-perennial-judging/issues/154 
 
@@ -1335,7 +1414,7 @@ Require a bigger initial deposit or premint some shares and burn them before the
 
 
 
-# Issue M-9: Oracle requests dont check if latest provider is still active 
+# Issue M-10: Oracle requests dont check if latest provider is still active 
 
 Source: https://github.com/sherlock-audit/2023-07-perennial-judging/issues/169 
 
@@ -1403,7 +1482,7 @@ Request from `oracles[global.latest].provider` if `block.timestamp` is not past 
 
 
 
-# Issue M-10: [Perennial Self Report] Fix non-requested commits after oracle grace period 
+# Issue M-11: [Perennial Self Report] Fix non-requested commits after oracle grace period 
 
 Source: https://github.com/sherlock-audit/2023-07-perennial-judging/issues/177 
 
@@ -1414,4 +1493,12 @@ Medium
 When a requested version was unavailable, non-requested versions would be blocked from being to be committed until a new requested version was committed. This could prevent liquidations from occurring.
 
 https://github.com/equilibria-xyz/perennial-v2/pull/58
+
+
+
+## Discussion
+
+**hrishibhat**
+
+This issue is not included in the contest pool rewards
 
